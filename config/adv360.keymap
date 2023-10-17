@@ -36,7 +36,7 @@
         compatible = "zmk,behavior-mod-morph";
         label = "openning_square_bracket";
         #binding-cells = <0>;
-        binding = <&kp LBKT>, <&kp CARET>
+        binding = <&kp LBKT>, <&kp CARET>;
     };
 
     //[{(-=*\)}]
