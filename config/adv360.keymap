@@ -35,7 +35,7 @@
     op_sq_br: openning_square_bracket {
         compatible = "zmk,behavior-mod-morph";
         label = "openning_square_bracket";
-        #binding-cells = <z>;
+        #binding-cells = <0>;
         binding = <&kp LBKT>, <&kp CARET>
     };
 
