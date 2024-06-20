@@ -26,6 +26,63 @@
           flavor = "tap-preferred";
           bindings = <&kp>, <&kp>;
       };
+
+          op_sq_br: openning_square_bracket {
+        compatible = "zmk,behavior-mod-morph";
+        label = "openning_square_bracket";
+        #binding-cells = <0>;
+        bindings = <&kp LBKT>, <&kp CARET>;
+        mods = <(MOD_LSFT|MOD_RSFT)>;
+      };
+
+      op_cl_br: openning_curly_bracket {
+          compatible = "zmk,behavior-mod-morph";
+          label = "openning_curly_bracket";
+          #binding-cells = <0>;
+          bindings = <&kp LBRC>, <&kp AT>;
+          mods = <(MOD_LSFT|MOD_RSFT)>;
+      };
+
+      op_par: openning_parenthesis {
+          compatible = "zmk,behavior-mod-morph";
+          label = "openning_parenthesis";
+          #binding-cells = <0>;
+          bindings = <&kp LPAR>, <&kp HASH>;
+          mods = <(MOD_LSFT|MOD_RSFT)>;
+      };
+
+      star: star {
+          compatible = "zmk,behavior-mod-morph";
+          label = "star";
+          #binding-cells = <0>;
+          bindings = <&kp STAR>, <&kp EXCL>;
+          mods = <(MOD_LSFT|MOD_RSFT)>;
+      };
+
+      cl_par: closing_parenthesis {
+          compatible = "zmk,behavior-mod-morph";
+          label = "closing_parenthesis";
+          #binding-cells = <0>;
+          bindings = <&kp RPAR>, <&kp AMPS>;
+          mods = <(MOD_LSFT|MOD_RSFT)>;
+      };
+
+      cl_cl_br: closing_curly_bracket {
+          compatible = "zmk,behavior-mod-morph";
+          label = "closing_curly_bracket";
+          #binding-cells = <0>;
+          bindings = <&kp RBRC>, <&kp PRCNT>;
+          mods = <(MOD_LSFT|MOD_RSFT)>;
+      };
+
+      cl_sq_br: closing_square_bracket {
+          compatible = "zmk,behavior-mod-morph";
+          label = "closing_square_bracket";
+          #binding-cells = <0>;
+          bindings = <&kp RBKT>, <&kp DLLR>;
+          mods = <(MOD_LSFT|MOD_RSFT)>;
+      };
+      
     };
 
   keymap {
@@ -33,20 +90,20 @@
 
     default_layer {
       bindings = <
-        &kp EQUAL &kp N1    &kp N2   &kp N3   &kp N4     &kp N5 &tog 1                                                           &mo 3 &kp N6 &kp N7 &kp N8    &kp N9   &kp N0   &kp MINUS
-        &kp TAB   &kp Q     &kp W    &kp E    &kp R      &kp T  &none                                                            &none &kp Y  &kp U  &kp I     &kp O    &kp P    &kp BSLH
-        &kp ESC   &kp A     &kp S    &kp D    &kp F      &kp G  &none           &kp LCTRL &kp LALT &kp LGUI  &kp RCTRL           &none &kp H  &kp J  &kp K     &kp L    &kp SEMI &kp SQT
-        &kp LSHFT &kp Z     &kp X    &kp C    &kp V      &kp B                            &kp HOME &kp PG_UP                           &kp N  &kp M  &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
-        &mo 2     &kp GRAVE &kp CAPS &kp LEFT &kp RIGHT                &kp BSPC &kp DEL   &kp END  &kp PG_DN &kp ENTER &kp SPACE              &kp UP &kp DOWN  &kp LBKT &kp RBKT &mo 2
+        &kp ESCAPE  &op_sq_br         &op_cl_br  &op_par     &kp MINUS  &kp EQUAL  &tog 1                                                                                 &mo 3      &star  &kp BSLH   &cl_par   &cl_cl_br  &cl_sq_br  &kp MINUS
+        &kp HOME    &kp SEMICOLON     &kp COMMA  &kp PERIOD  &kp P      &kp Y      &kp LC(V)                                                                              &kp CAPS   &kp F  &kp G      &kp C     &kp R      &kp L      &kp END
+        &kp TAB     &kp A             &kp O      &kp E       &kp U      &kp I      &kp LC(C)        &mo 1         &tog 1                  &kp LGUI        &kp BACKSPACE   &kp LC(Z)  &kp D  &kp H      &kp T     &kp N      &kp S      &kp FSLH
+        &kp LSHFT   &kp SINGLE_QUOTE  &kp Q      &kp J       &kp K      &kp X                              &kp RIGHT_ALT                  &kp RIGHT_ALT                              &kp B  &kp M      &kp W     &kp V      &kp Z      &kp RSHFT
+        &mo 2       &kp INS           &kp PG_DN  &kp LEFT    &kp RIGHT           &kp LCTRL   &kp LEFT_ALT   &kp LEFT_WIN                  &kp DELETE      &kp ENTER  &kp SPACE              &kp UP     &kp DOWN  &kp PG_UP  &kp K_APP  &mo 2
       >;
     };
     keypad {
       bindings = <
-        &kp EQUAL &kp N1    &kp N2   &kp N3   &kp N4     &kp N5 &trans                                                           &mo 3 &kp N6 &kp KP_NUM &kp KP_EQUAL &kp KP_DIVIDE &kp KP_MULTIPLY &kp MINUS
-        &kp TAB   &kp Q     &kp W    &kp E    &kp R      &kp T  &none                                                            &none &kp Y  &kp KP_N7  &kp KP_N8    &kp KP_N9     &kp KP_MINUS    &kp BSLH
-        &kp ESC   &kp A     &kp S    &kp D    &kp F      &kp G  &none           &kp LCTRL &kp LALT &kp LGUI  &kp RCTRL           &none &kp H  &kp KP_N4  &kp KP_N5    &kp KP_N6     &kp KP_PLUS     &kp SQT
-        &kp LSHFT &kp Z     &kp X    &kp C    &kp V      &kp B                            &kp HOME &kp PG_UP                           &kp N  &kp KP_N1  &kp KP_N2    &kp KP_N3     &kp KP_ENTER    &kp RSHFT
-        &mo 2     &kp GRAVE &kp CAPS &kp LEFT &kp RIGHT                &kp BSPC &kp DEL   &kp END  &kp PG_DN &kp ENTER &kp KP_N0              &kp UP     &kp DOWN     &kp KP_DOT    &kp RBKT        &mo 2
+    &trans  &trans  &trans    &trans     &trans  &trans            &trans                                                   &mo 3  &trans  &trans    &trans  &trans  &trans     &trans
+    &trans  &trans  &trans    &trans     &trans  &trans            &trans                                                  &trans  &trans  &kp N7    &kp N8  &kp N9  &trans     &trans
+    &trans  &trans  &trans    &trans     &trans  &trans            &trans   &mo 1  &tog 1                  &trans  &trans  &trans  &trans  &kp N4    &kp N5  &kp N6  &trans     &trans
+ &kp LSHFT  &trans  &trans    &trans     &trans  &trans                            &trans                  &trans                  &trans  &kp N1    &kp N2  &kp N3  &kp N0  &kp RSHFT
+     &mo 2  &trans  &trans  &kp LEFT  &kp RIGHT                    &trans  &trans  &trans                  &trans  &trans  &trans          &kp UP  &kp DOWN  &trans  &trans      &mo 2
       >;
     };
     fn {
