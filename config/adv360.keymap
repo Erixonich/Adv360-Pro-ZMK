@@ -42,7 +42,7 @@
           bindings = <&kp LBRC>, <&kp AT>;
           mods = <(MOD_LSFT|MOD_RSFT)>;
       };
-
+ee
       op_par: openning_parenthesis {
           compatible = "zmk,behavior-mod-morph";
           label = "openning_parenthesis";
@@ -90,11 +90,11 @@
 
     default_layer {
       bindings = <
-        &kp ESCAPE  &op_sq_br         &op_cl_br  &op_par     &kp MINUS  &kp EQUAL  &tog 1                                                                                 &mo 3      &star  &kp BSLH   &cl_par   &cl_cl_br  &cl_sq_br  &kp MINUS
+        &kp ESCAPE  &op_sq_br         &op_cl_br  &op_par     &kp MINUS  &kp EQUAL  &tog 1                                                                                 &mo 3      &star  &kp BSLH   &cl_par   &cl_cl_br  &cl_sq_br  &kp GRAVE
         &kp HOME    &kp SEMICOLON     &kp COMMA  &kp PERIOD  &kp P      &kp Y      &kp LC(V)                                                                              &kp CAPS   &kp F  &kp G      &kp C     &kp R      &kp L      &kp END
-        &kp TAB     &kp A             &kp O      &kp E       &kp U      &kp I      &kp LC(C)        &mo 1         &tog 1                  &kp LGUI        &kp BACKSPACE   &kp LC(Z)  &kp D  &kp H      &kp T     &kp N      &kp S      &kp FSLH
+        &kp TAB     &kp A             &kp O      &kp E       &kp U      &kp I      &kp LC(C)        &mo 1         &tog 1                  &kp LGUI        &kp BACKSPACE   &kp LC(Z)  &kp D  &kp H      &kp T     &kp N      &kp S      &kp FSLH/
         &kp LSHFT   &kp SINGLE_QUOTE  &kp Q      &kp J       &kp K      &kp X                              &kp RIGHT_ALT                  &kp RIGHT_ALT                              &kp B  &kp M      &kp W     &kp V      &kp Z      &kp RSHFT
-        &mo 2       &kp INS           &kp PG_DN  &kp LEFT    &kp RIGHT           &kp LCTRL   &kp LEFT_ALT   &kp LEFT_WIN                  &kp DELETE      &kp ENTER  &kp SPACE              &kp UP     &kp DOWN  &kp PG_UP  &kp K_APP  &mo 2
+        &mo 2       &kp PG_DN         &kp INS  &kp LEFT    &kp RIGHT             &kp LCTRL   &kp LEFT_ALT   &kp LEFT_WIN                  &kp DELETE      &kp ENTER  &kp SPACE              &kp UP     &kp DOWN  &kp K_APP  &kp PG_UP  &mo 2
       >;
     };
     keypad {
